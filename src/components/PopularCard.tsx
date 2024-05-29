@@ -1,9 +1,9 @@
-import { Card, CardActionArea, CardContent, CardMedia, Grid, Link, Rating, Stack, Typography } from '@mui/material';
-import React from 'react'
+import React  from 'react';
+import { Grid, Link, Rating, Stack } from '@mui/material';
+import { PopularCardInterface } from '../interface/PopularCardInterface';
 
-export const PopularCard = ({overview, poster_path, title, id, vote_average, backdrop_path, release_date, popularity}) => {
+export const PopularCard = ({overview, title, id, vote_average, backdrop_path, release_date, popularity}:PopularCardInterface) => {
 
-    const posterImage=`https://image.tmdb.org/t/p/w500${poster_path}`;  
     const imagePath=`https://image.tmdb.org/t/p/w500${backdrop_path}`;  
     
 
@@ -13,6 +13,7 @@ export const PopularCard = ({overview, poster_path, title, id, vote_average, bac
             justifyContent="space-around"
             alignItems="center"
             direction="row"
+            key={id}
         >
             <div>
                 <h3>{title}</h3>

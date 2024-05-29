@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -8,7 +8,7 @@ import { Container, Typography } from '@mui/material';
 
 export const PopularMovies = () => {
 
-   var settings = {
+   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -22,12 +22,12 @@ export const PopularMovies = () => {
   return (
     <Container 
     >
-        <Typography variant="subtitle"> Popular on MovieBay: </Typography>
+        <Typography variant="h4"> Popular on MovieBay: </Typography>
         <Slider {...settings}>
         {
             
-            popular && popular.map( (movie, index) => (
-                <PopularCard key={movie.id} index={index} {... movie}/>
+            popular && popular.map( (movie) => (
+                <PopularCard key={movie.id}  {... movie}/>
             ))
         }
         </Slider>
