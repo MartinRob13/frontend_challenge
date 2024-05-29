@@ -5,6 +5,7 @@ export const Welcome = () => {
   return (
     <>
         <PopularMovies />
+        
     </>
   )
 }
