@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, CardMedia, Grid, Rating, Stack, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, Grid, Link, Rating, Stack, Typography } from '@mui/material';
 import React from 'react'
 
 export const PopularCard = ({overview, poster_path, title, id, vote_average, backdrop_path, release_date, popularity}) => {
