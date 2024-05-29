@@ -1,7 +1,8 @@
+import React from 'react';
 import './App.css';
 import { Welcome } from './pages/Welcome';
 
-// @ts-ignore
+// "@ts-expect-error"
 import { AppTheme } from './theme';
 
 function App() {
