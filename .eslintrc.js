@@ -16,9 +16,8 @@ module.exports = {
     extends: ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
     plugins: ["react", "react-hooks"],
     rules: {
-      // Define your custom ESLint rules here, if needed.
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }], //should add ".ts" if typescript project
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     },
   };
