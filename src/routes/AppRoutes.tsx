@@ -9,8 +9,6 @@ export const AppRoutes = () => {
     <Routes>
         <Route path="login" element={ <LoginPage />}/>
 
-        <Route path="movies" element={ <Welcome />}/>
-        <Route path="series" element={ <SerieDetails />}/>
         <Route path="moviedetails/:id" element={ <MovieDetails />}/>
         <Route path="seriedetails/:id" element={ <SerieDetails />}/>
 

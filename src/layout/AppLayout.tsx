@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Toolbar } from "@mui/material";
 import { NavBar } from "../components/NavBar";
 import { SideBar } from "../components/SideBar";
 
@@ -18,10 +18,11 @@ export const AppLayout = ({children}: Props) => {
 
         <Box 
             component='main'
-            sx={{ flexGrow: 1 }}
+            sx={{ flexGrow: 1, p: 1 }}
         >
-            {/* Toolbar */}
-            { children }
+           <Toolbar />
+
+          { children }
         </Box>
     </Box>
   )
