@@ -7,7 +7,6 @@ import { MoviesView } from '../views/MoviesView'
 export const Welcome = () => {
   return (
     <AppLayout>
-       {/* <HomeView /> */}
        <MoviesView />
     </AppLayout>
   )

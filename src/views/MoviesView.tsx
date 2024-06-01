@@ -1,20 +1,29 @@
-import { Grid, Typography } from "@mui/material"
+import { Grid } from "@mui/material"
 import { PopularMovies } from "../components/popular/PopularMovies"
+import { HeroBanner } from "../components/HeroBanner"
+import { HorizontalSlider } from "../components/HorizontalSlider"
 
 export const MoviesView = () => {
   return (
     <Grid container
-        direction='row'
+        direction='column'
         justifyContent='space-between'
         sx={{
-            mb:1
+            m: 0
         }}
     >
-        <Grid item>
-            <Typography fontSize={ 39 } fontWeight='light'>Movies</Typography>
+        <Grid container sx={{m: 0 }}>
+            <HeroBanner />
         </Grid>
-        <Grid item sx={{ mt: 3 }}>
+
+        <Grid container sx={{ mt: 3 }}>
             <PopularMovies />
+        
+        </Grid>
+
+        <Grid container  sx={{ mt: 4 }}>
+        
+            <HorizontalSlider title='Movies we recommend'/>
         </Grid>
     </Grid>
   )

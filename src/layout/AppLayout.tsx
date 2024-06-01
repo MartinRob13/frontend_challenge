@@ -18,7 +18,7 @@ export const AppLayout = ({children}: Props) => {
 
         <Box 
             component='main'
-            sx={{ flexGrow: 1, p: 1 }}
+            sx={{ flexGrow: 1, p: 0 }}
         >
            <Toolbar />
 
