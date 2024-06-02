@@ -1,4 +1,4 @@
-export const movieOnCinema =  [
+export const movieOnCinema = 
     {
         "adult": false,
         "backdrop_path": "/44immBwzhDVyjn87b3x3l9mlhAD.jpg",
@@ -18,5 +18,4 @@ export const movieOnCinema =  [
         "video": false,
         "vote_average": 7.4,
         "vote_count": 706
-      }
-];
+      };

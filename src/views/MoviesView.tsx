@@ -2,6 +2,8 @@ import { Grid } from "@mui/material"
 import { PopularMovies } from "../components/popular/PopularMovies"
 import { HeroBanner } from "../components/HeroBanner"
 import { HorizontalSlider } from "../components/HorizontalSlider"
+import { movieOnCinema } from "../data/movieOnCinema";
+
 
 export const MoviesView = () => {
   return (
@@ -13,7 +15,7 @@ export const MoviesView = () => {
         }}
     >
         <Grid container sx={{m: 0 }}>
-            <HeroBanner />
+            <HeroBanner {... movieOnCinema}/>
         </Grid>
 
         <Grid container sx={{ mt: 3 }}>

@@ -1,7 +1,14 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { movieOnCinema } from "../data/movieOnCinema";
 
-export const HeroBanner = () => {
+type HeroBannerProps = {
+    id: number;
+    title:string;
+    backdrop_path:string;
+    overview:string;
+  };
+  
+
+export const HeroBanner = ({id, title, backdrop_path, overview}:HeroBannerProps) => {
 
     const bannerImg="/hero_img.png";
 
@@ -13,19 +20,19 @@ export const HeroBanner = () => {
                     <Typography variant="h4" gutterBottom >Now in theaters!</Typography>
                 </Box>
                 {
-                    movieOnCinema && movieOnCinema.map(movie => (
-                        <Box key={movie.id} sx={{ display: 'flex', flexDirection: { xs:'column', md: 'row'}, alignItems: 'center'}}>
+                    
+                        <Box key={id} sx={{ display: 'flex', flexDirection: { xs:'column', md: 'row'}, alignItems: 'center'}}>
                            
                             <Box>
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title}/>
+                                <img src={`https://image.tmdb.org/t/p/w500${backdrop_path}`} alt={title}/>
 
-                                <Typography>{movie.title}</Typography>
+                                <Typography>{title}</Typography>
                             </Box>
                             <Box sx={{ display:'flex', alignItems:'center', maxWidth: '300px', background: 'rgb(255 255 255 / 20%)', height: '100%',}}>
-                                <Typography sx={{ p: 2, textAlign:'center' }}>{movie.overview}</Typography>    
+                                <Typography sx={{ p: 2, textAlign:'center' }}>{overview}</Typography>    
                             </Box>
                         </Box>
-                    ))
+                   
                 }
             </Grid>
         </Grid>
