@@ -1,0 +1,30 @@
+import { Grid } from "@mui/material"
+import { PopularMovies } from "../components/popular/PopularMovies"
+import { HeroBanner } from "../components/HeroBanner"
+import { HorizontalSlider } from "../components/HorizontalSlider"
+
+export const MoviesView = () => {
+  return (
+    <Grid container
+        direction='column'
+        justifyContent='space-between'
+        sx={{
+            m: 0
+        }}
+    >
+        <Grid container sx={{m: 0 }}>
+            <HeroBanner />
+        </Grid>
+
+        <Grid container sx={{ mt: 3 }}>
+            <PopularMovies />
+        
+        </Grid>
+
+        <Grid container  sx={{ mt: 4 }}>
+        
+            <HorizontalSlider title='Movies we recommend'/>
+        </Grid>
+    </Grid>
+  )
+}
