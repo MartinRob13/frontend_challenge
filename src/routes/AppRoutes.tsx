@@ -3,6 +3,7 @@ import { LoginPage } from "../pages/LoginPage"
 import { Welcome } from "../pages/Welcome"
 import { MovieDetails } from "../pages/MovieDetails"
 import { SerieDetails } from "../pages/SerieDetails"
+import { SeriesPage } from "../pages/SeriesPage"
 
 export const AppRoutes = () => {
   return (
@@ -11,6 +12,10 @@ export const AppRoutes = () => {
 
         <Route path="moviedetails/:id" element={ <MovieDetails />}/>
         <Route path="seriedetails/:id" element={ <SerieDetails />}/>
+
+        <Route path="movies" element={ <Welcome />}/>
+        <Route path="series" element={ <SeriesPage />}/>
+
 
         <Route path='/*' element={ <Welcome />} />
     </Routes>
