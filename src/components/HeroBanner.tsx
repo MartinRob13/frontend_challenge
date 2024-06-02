@@ -5,10 +5,11 @@ type HeroBannerProps = {
     title:string;
     backdrop_path:string;
     overview:string;
+    heroTitle:string;
   };
   
 
-export const HeroBanner = ({id, title, backdrop_path, overview}:HeroBannerProps) => {
+export const HeroBanner = ({id, title, backdrop_path, overview, heroTitle}:HeroBannerProps) => {
 
     const bannerImg="/hero_img.png";
 
@@ -17,7 +18,7 @@ export const HeroBanner = ({id, title, backdrop_path, overview}:HeroBannerProps)
         <Grid container sx={{ background: 'rgba(0, 0, 0, 0.6)'}}>
             <Grid container sx={{display: 'flex', justifyContent: 'center', alignItems:'center', flexDirection: 'column' }}>
                 <Box>
-                    <Typography variant="h4" gutterBottom >Now in theaters!</Typography>
+                    <Typography variant="h4" gutterBottom >{heroTitle}</Typography>
                 </Box>
                 {
                     

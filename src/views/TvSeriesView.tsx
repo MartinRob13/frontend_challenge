@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material"
 import { HeroBanner } from "../components/HeroBanner"
 import { serieOnAir } from "../data/serieOnair"
+import { PopularSeries } from "../components/popular/PopularSeries"
 
 export const TvSeriesView = () => {
   return (
@@ -11,7 +12,12 @@ export const TvSeriesView = () => {
             m: 0
         }}>
           <Grid container sx={{m: 0 }}>
-            <HeroBanner {... serieOnAir} title={serieOnAir.name}/>
+            <HeroBanner heroTitle="Now on air!"{... serieOnAir} title={serieOnAir.name}/>
+        </Grid>
+
+        <Grid container sx={{ mt: 3 }}>
+            <PopularSeries />
+        
         </Grid>
 
     </Grid>

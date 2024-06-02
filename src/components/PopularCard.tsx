@@ -4,7 +4,7 @@ import { Carousel } from 'react-bootstrap';
 
 export const PopularCard = ({overview, title, id, vote_average, backdrop_path, release_date, popularity}:PopularCardInterface) => {
 
-    const imagePath=`https://image.tmdb.org/t/p/w500${backdrop_path}`;  
+    const imagePath= backdrop_path ? `https://image.tmdb.org/t/p/w500${backdrop_path}` : "/hero2.png";  
     
     return (
         
