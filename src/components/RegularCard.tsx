@@ -3,7 +3,8 @@ import { PopularCardInterface } from "../interface/PopularCardInterface"
 
 
 export const RegularCard = ({ title, backdrop_path, }:PopularCardInterface) => {
-    const imagePath=`https://image.tmdb.org/t/p/w500${backdrop_path}`;  
+  const imagePath= backdrop_path ? `https://image.tmdb.org/t/p/w500${backdrop_path}` : "/hero2.png";  
+
 
   return (
     <Card className="bg-dark text-white regularCard">

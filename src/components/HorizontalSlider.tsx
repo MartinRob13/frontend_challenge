@@ -1,23 +1,29 @@
 import { PopularCardInterface } from "../interface/PopularCardInterface";
-import { popular } from '../data/popular';
 import { Container, Typography } from "@mui/material";
 import { RegularCard } from "./RegularCard";
+import { PopularSeriesInterface } from "../interface/PopularSeriesInterface";
 
 type Props = {
     title:string;
-    movies?: PopularCardInterface[]
+    movies?: PopularCardInterface[];
+    series?: PopularSeriesInterface[];
   };
   
 
-export const HorizontalSlider = ({title}:Props) => {
+export const HorizontalSlider = ({title, movies, series}:Props) => {
 
     return (
         <Container  >
             <Typography variant="h5" sx={{ color: '#fff', mb: 3}}>{title} </Typography>
             <div className="horizontalSlider full">
                 {
-                    popular && popular.map(content => (
+                    movies && movies.map(content => (
                         <RegularCard key={content.id} {... content}/>
+                    ))
+                }
+                {
+                    series && series.map(content => (
+                        <RegularCard key={content.id} title={content.name} release_date={content.first_air_date} {... content} />
                     ))
                 }
                  

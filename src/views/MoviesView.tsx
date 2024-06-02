@@ -3,6 +3,8 @@ import { PopularMovies } from "../components/popular/PopularMovies"
 import { HeroBanner } from "../components/HeroBanner"
 import { HorizontalSlider } from "../components/HorizontalSlider"
 import { movieOnCinema } from "../data/movieOnCinema";
+import { popular } from '../data/popular';
+
 
 
 export const MoviesView = () => {
@@ -25,7 +27,7 @@ export const MoviesView = () => {
 
         <Grid container  sx={{ mt: 4 }}>
         
-            <HorizontalSlider title='Movies we recommend'/>
+            <HorizontalSlider title='Movies we recommend' movies={popular}/>
         </Grid>
     </Grid>
   )
