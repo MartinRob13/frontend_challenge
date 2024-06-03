@@ -19,7 +19,7 @@ export const moviesSlice = createSlice({
 
             },
             setMovies: (state,action) => {
-
+                state.movies = action.payload;
             },
             deleteMovieById: (state, action) => {
 
