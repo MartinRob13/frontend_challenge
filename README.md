@@ -23,6 +23,8 @@ environment running
 1.Install all dependencies
 
     npm install
+    yarn
+    
 
 And to run the project
 
