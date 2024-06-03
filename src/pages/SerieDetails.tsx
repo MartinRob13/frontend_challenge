@@ -1,22 +1,23 @@
 import { AppLayout } from '../layout/AppLayout'
 import { Stack, Typography, Grid, Card, CardMedia, CardContent, Button } from '@mui/material'
 import { Favorite } from '@mui/icons-material';
-import { serieOnAir } from '../data/serieOnair';
+import { useFetchSerie } from '../hooks/useFetchSerie';
+import { useParams } from 'react-router';
 
-type Props = {
-  id:number;
-};
+export const SerieDetails = () => {
 
-export const SerieDetails = ({id}:Props) => {
+  const { id } = useParams();
+  
+  const {serieOnAir} = useFetchSerie(id);
 
-  const imagePoster= serieOnAir.poster_path ? `https://image.tmdb.org/t/p/w500${serieOnAir.poster_path}` : "/hero2.png";  
+  const imagePoster= serieOnAir?.poster_path ? `https://image.tmdb.org/t/p/w500${serieOnAir.poster_path}` : "/hero2.png";  
 
   return (
     <AppLayout>
       <Stack direction="column" spacing={2}>
         <Grid container direction="column" justifyContent="center" alignItems="center"  spacing={2} sx={{color: '#fff', padding: '15px'}}>
             <Grid item>
-              <Typography variant="h2">{serieOnAir.name}</Typography>
+              <Typography variant="h2">{serieOnAir?.name}</Typography>
             </Grid>
             <Grid item>
               <Button variant="contained" endIcon={<Favorite />}>
@@ -29,16 +30,16 @@ export const SerieDetails = ({id}:Props) => {
                   <CardMedia
                     component="img"
                     image={imagePoster}
-                    alt={serieOnAir.name+" poster"}
+                    alt={serieOnAir?.name+" poster"}
                     height= '700px'
                     width= '700px'
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      {serieOnAir.original_name}
+                      {serieOnAir?.original_name}
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
-                      {serieOnAir.overview}
+                      {serieOnAir?.overview}
                     </Typography>
                   </CardContent>
               </Card>

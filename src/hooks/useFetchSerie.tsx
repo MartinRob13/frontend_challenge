@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { PopularCardInterface } from "../interface/PopularCardInterface";
+import { PopularSeriesInterface } from "../interface/PopularSeriesInterface";
 
 
-export const useFetchMovie = (id: string | undefined) => {
+export const useFetchSerie = (id: string | undefined) => {
 
-    const [movie, setMovie] = useState<PopularCardInterface>();
-    const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;  
+    const [serieOnAir, setSerie] = useState<PopularSeriesInterface>();
+    const url = `https://api.themoviedb.org/3/tv/${id}?language=en-US`;  
 
     const options = {
         method: 'GET',
@@ -18,11 +18,11 @@ export const useFetchMovie = (id: string | undefined) => {
       useEffect(() => {
         fetch(url, options)
         .then(res => res.json())
-        .then(json => setMovie(json))
+        .then(json => setSerie(json))
         .catch(err => console.error('error:' + err));
     
       }, [])
 
-      return { movie }
+      return { serieOnAir }
 
 }
