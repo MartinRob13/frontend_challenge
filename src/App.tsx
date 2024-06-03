@@ -1,15 +1,14 @@
-import './App.css'
+import './App.css';
+import { AppTheme } from './theme';
+import { AppRouter } from './router/AppRouter';
 
 function App() {
 
   return (
-    <>
-      <h1>Movie Hub</h1>
-      <div className="card">
-        
-      </div>
-      
-    </>
+      <AppTheme>
+        <AppRouter />
+      </AppTheme>
+
   )
 }
 
