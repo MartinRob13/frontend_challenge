@@ -4,10 +4,17 @@ import { HeroBanner } from "../components/HeroBanner"
 import { HorizontalSlider } from "../components/HorizontalSlider"
 import { movieOnCinema } from "../data/movieOnCinema";
 import { popular } from '../data/popular';
+import { starLoadingMovies } from "../store/movies";
+import { useAppDispatch } from "../hooks/useAppDispatch";
 
 
 
 export const MoviesView = () => {
+
+    const dispatch = useAppDispatch();
+
+    dispatch( starLoadingMovies() );  
+
   return (
     <Grid container
         direction='column'
