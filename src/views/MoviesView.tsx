@@ -17,7 +17,7 @@ export const MoviesView = () => {
         }}
     >
         <Grid container sx={{m: 0 }}>
-            <HeroBanner heroTitle="Now in theaters!" {... movieOnCinema}/>
+            <HeroBanner heroTitle="Now in theaters!" {... movieOnCinema} type='movie'/>
         </Grid>
 
         <Grid container sx={{ mt: 3 }}>

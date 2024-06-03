@@ -1,10 +1,19 @@
-import { Grid, Link, Rating, Typography } from '@mui/material';
+import { Button, Grid, Link, Rating, Typography } from '@mui/material';
 import { PopularCardInterface } from '../interface/PopularCardInterface';
 import { Carousel } from 'react-bootstrap';
 
-export const PopularCard = ({overview, title, id, vote_average, backdrop_path, release_date, popularity}:PopularCardInterface) => {
+export const PopularCard = ({overview, title, id, vote_average, backdrop_path, release_date, popularity, type}:PopularCardInterface) => {
 
     const imagePath= backdrop_path ? `https://image.tmdb.org/t/p/w500${backdrop_path}` : "/hero2.png";  
+
+    let detailsUrl = '#';
+    if(type==='movie'){
+        detailsUrl = `/moviedetails/${id}`
+    }
+    else if(type==='tvserie'){
+        detailsUrl = `/seriedetails/${id}`
+
+    }
     
     return (
         
@@ -38,6 +47,9 @@ export const PopularCard = ({overview, title, id, vote_average, backdrop_path, r
                             <Link color="secondary.light" href="https://developer.themoviedb.org/docs/popularity-and-trending" target="_blank" rel="noopener">
                                 Popularity:
                             </Link> {popularity} 
+                        </p>
+                        <p>
+                            <Button variant="contained" href={detailsUrl}>More info</Button> 
                         </p>
                         
                         

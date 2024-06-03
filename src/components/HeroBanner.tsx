@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
 type HeroBannerProps = {
     id: number;
@@ -6,12 +6,21 @@ type HeroBannerProps = {
     backdrop_path:string;
     overview:string;
     heroTitle:string;
+    type:string;
   };
   
 
-export const HeroBanner = ({id, title, backdrop_path, overview, heroTitle}:HeroBannerProps) => {
+export const HeroBanner = ({id, title, backdrop_path, overview, heroTitle, type}:HeroBannerProps) => {
 
     const bannerImg="/hero_img.png";
+    let detailsUrl = '#';
+    if(type==='movie'){
+        detailsUrl = `/moviedetails/${id}`
+    }
+    else if(type==='tvserie'){
+        detailsUrl = `/seriedetails/${id}`
+
+    }
 
   return (
       <Grid container sx={{ backgroundImage: `url(${bannerImg})`,  height: { sm: '', md:'500px'}, m:0, color: '#fff', backgroundSize: 'cover'}}>
@@ -29,8 +38,9 @@ export const HeroBanner = ({id, title, backdrop_path, overview, heroTitle}:HeroB
 
                                 <Typography>{title}</Typography>
                             </Box>
-                            <Box sx={{ display:'flex', alignItems:'center', maxWidth: '300px', background: 'rgb(255 255 255 / 20%)', height: '100%',}}>
-                                <Typography sx={{ p: 2, textAlign:'center' }}>{overview}</Typography>    
+                            <Box sx={{ display:'flex', alignItems:'center', maxWidth: '300px', flexDirection:'column', justifyContent:'center', background: 'rgb(255 255 255 / 20%)', height: '100%',}}>
+                                <Typography sx={{ p: 2, textAlign:'center' }}>{overview}</Typography>   
+                                <Button variant="contained" href={detailsUrl}>More info</Button> 
                             </Box>
                         </Box>
                    

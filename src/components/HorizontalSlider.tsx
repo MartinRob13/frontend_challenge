@@ -18,12 +18,12 @@ export const HorizontalSlider = ({title, movies, series}:Props) => {
             <div className="horizontalSlider full">
                 {
                     movies && movies.map(content => (
-                        <RegularCard key={content.id} {... content}/>
+                        <RegularCard key={content.id} type='movie' {... content}/>
                     ))
                 }
                 {
                     series && series.map(content => (
-                        <RegularCard key={content.id} title={content.name} release_date={content.first_air_date} {... content} />
+                        <RegularCard key={content.id} title={content.name} release_date={content.first_air_date} original_title={content.original_name} type='tvserie' {... content} />
                     ))
                 }
                  

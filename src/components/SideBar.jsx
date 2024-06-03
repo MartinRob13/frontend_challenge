@@ -28,7 +28,7 @@ export const SideBar = ({drawerWidth = 150}) => {
 
             <List>
             <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton component="a" href="/">
                         <ListItemIcon  sx={{ color: '#fff' }}>
                             <Home />
                         </ListItemIcon>
@@ -38,7 +38,7 @@ export const SideBar = ({drawerWidth = 150}) => {
                     </ListItemButton>
                </ListItem>
                <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton component="a" href="/movies">
                         <ListItemIcon  sx={{ color: '#fff' }}>
                             <Theaters />
                         </ListItemIcon>
@@ -48,7 +48,7 @@ export const SideBar = ({drawerWidth = 150}) => {
                     </ListItemButton>
                </ListItem>
                <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton component="a" href="/series">
                         <ListItemIcon sx={{ color: '#fff' }}>
                             <Tv />
                         </ListItemIcon>

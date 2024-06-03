@@ -12,7 +12,7 @@ export const PopularSeries = () => {
           {
               popularSeries && popularSeries.map( (serie) => (
                 <Carousel.Item key={serie.id}>
-                  <PopularCard title={serie.name} release_date={serie.first_air_date} {... serie}/>
+                  <PopularCard title={serie.name} release_date={serie.first_air_date} original_title={serie.original_name} type='tvserie' {... serie}/>
                 </Carousel.Item>
         
               ))
