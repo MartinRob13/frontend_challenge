@@ -15,7 +15,7 @@ export const PopularMovies = () => {
           {
               popular && popular.map( (movie) => (
                 <Carousel.Item key={movie.id}>
-                  <PopularCard   {... movie}/>
+                  <PopularCard type='movie' {... movie}/>
                 </Carousel.Item>
         
               ))

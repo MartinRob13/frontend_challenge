@@ -8,4 +8,5 @@ export interface PopularCardInterface {
     backdrop_path:string | null;
     release_date:string;
     popularity:number;
+    type?: string;
 }

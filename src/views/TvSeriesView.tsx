@@ -14,7 +14,7 @@ export const TvSeriesView = () => {
             m: 0
         }}>
           <Grid container sx={{m: 0 }}>
-            <HeroBanner heroTitle="Now on air!"{... serieOnAir} title={serieOnAir.name}/>
+            <HeroBanner heroTitle="Now on air!"{... serieOnAir} title={serieOnAir.name} type='tvserie'/>
         </Grid>
 
         <Grid container sx={{ mt: 3 }}>
